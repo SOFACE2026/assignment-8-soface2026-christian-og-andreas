@@ -26,7 +26,7 @@ void send_func(std::string whereis_endpoint)
 
         auto split = msg.find(",");
         std::string recipient = msg.substr(0, split);
-        std::string text = msg.substr(split + 1);
+        std::string text = std::string("Message from: ").append(recipient).append(" Message content: ").append(msg.substr(split + 1));
         bool recipient_located = true;
 
         // check if we already have an connection to the recipient
